@@ -13,7 +13,6 @@ class DifferTest {
 
     String actual = Differ.generate(file1, file2);
 
-
     String expected =
         """
                 {
