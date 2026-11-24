@@ -7,34 +7,44 @@ import picocli.CommandLine.Parameters;
 import java.util.concurrent.Callable;
 
 @Command(
-        name = "app",
+        name = "gendiff",
         mixinStandardHelpOptions = true,
-        version = "app 1.0",
-        description = "Пример консольного приложения на Picocli."
+        version = "gendiff 1.0",
+        description = "Compares two configuration files and shows a difference.",
+        showDefaultValues = true // Включает отображение [default: stylish] в справке
 )
 public class App implements Callable<Integer> {
 
-    // Пример опционального параметра (опции)
-    @Option(names = {"-v", "--verbose"}, description = "Включить подробный вывод")
-    private boolean verbose;
+    // Два обязательных позиционных параметра
+    @Parameters(index = "0", description = "path to first file")
+    private String filepath1;
 
-    // Пример обязательного позиционного параметра
-    @Parameters(index = "0", description = "Имя пользователя для приветствия")
-    private String name;
+    @Parameters(index = "1", description = "path to second file")
+    private String filepath2;
+
+    // Опция формата вывода
+    @Option(
+            names = {"-f", "--format"},
+            description = "output format",
+            defaultValue = "stylish"
+    )
+    private String format;
 
     public static void main(String[] args) {
-        // Создаем экземпляр команды и запускаем его
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }
 
     @Override
     public Integer call() throws Exception {
-        // Здесь размещается основная логика приложения
-        if (verbose) {
-            System.out.println("Режим подробного вывода включен.");
-        }
-        System.out.printf("Привет, %s!%n", name);
-        return 0; // Код успешного завершения
+        // На этом шаге логики сравнения пока нет.
+        // Для проверки того, что параметры считываются, можно вывести их в консоль.
+        // Позже здесь будет вызов Differ.generate(filepath1, filepath2, format).
+
+        System.out.println("File 1: " + filepath1);
+        System.out.println("File 2: " + filepath2);
+        System.out.println("Format: " + format);
+
+        return 0;
     }
 }
