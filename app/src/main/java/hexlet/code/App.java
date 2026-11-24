@@ -11,18 +11,16 @@ import java.util.concurrent.Callable;
         mixinStandardHelpOptions = true,
         version = "gendiff 1.0",
         description = "Compares two configuration files and shows a difference.",
-        showDefaultValues = true // Включает отображение [default: stylish] в справке
+        showDefaultValues = true
 )
 public class App implements Callable<Integer> {
 
-    // Два обязательных позиционных параметра
     @Parameters(index = "0", description = "path to first file")
     private String filepath1;
 
     @Parameters(index = "1", description = "path to second file")
     private String filepath2;
 
-    // Опция формата вывода
     @Option(
             names = {"-f", "--format"},
             description = "output format",
@@ -37,13 +35,12 @@ public class App implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        // На этом шаге логики сравнения пока нет.
-        // Для проверки того, что параметры считываются, можно вывести их в консоль.
-        // Позже здесь будет вызов Differ.generate(filepath1, filepath2, format).
+        // Вызываем наш Differ. Если файлы не найдутся или будут битые,
+        // исключение пробросится наверх, как и просили в задании.
+        String result = Differ.generate(filepath1, filepath2);
 
-        System.out.println("File 1: " + filepath1);
-        System.out.println("File 2: " + filepath2);
-        System.out.println("Format: " + format);
+        // На данном шаге result - это просто заглушка, выводим ее
+        System.out.println(result);
 
         return 0;
     }
