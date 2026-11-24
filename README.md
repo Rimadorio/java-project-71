@@ -23,7 +23,7 @@ cd java-project-71
 ## Использование
 
 <!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
-
+https://asciinema.org/a/jYoSuAYppjp83NFF
 ---
 
 <details>
