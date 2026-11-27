@@ -14,21 +14,18 @@
 
 ## Установка
 
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
-
 ```bash
 git clone https://github.com/Rimadorio/java-project-71.git
 cd java-project-71
 ```
 
-## Использование
+### Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
-https://asciinema.org/a/jYoSuAYppjp83NFF - находит различия между двумя плоскими JSON-файлами и выводит их в формате со знаками + и -. Ключи отсортированы по алфавиту.
-https://asciinema.org/a/KaqUoSwLTcv2TD3D - поиск различий между двумя плоскими (только пары ключ-значение) yaml файлами
-https://asciinema.org/a/ZAa14r4FkRr7dnH6 - gendiff сравнивает файлы с вложенными структурами в формате stylish по умолчанию
-https://asciinema.org/a/U7O5zjjD2pjvv3gd - gendiff -f plain выводит разницу в текстовом формате.
-https://asciinema.org/a/xh7ascRSQOoM28iu - все три формата работают: stylish (по умолчанию), plain, json.
+*https://asciinema.org/a/jYoSuAYppjp83NFF - находит различия между двумя плоскими JSON-файлами и выводит их в формате со знаками + и -. Ключи отсортированы по алфавиту.
+*https://asciinema.org/a/KaqUoSwLTcv2TD3D - поиск различий между двумя плоскими (только пары ключ-значение) yaml файлами
+*https://asciinema.org/a/ZAa14r4FkRr7dnH6 - gendiff сравнивает файлы с вложенными структурами в формате stylish по умолчанию
+*https://asciinema.org/a/U7O5zjjD2pjvv3gd - gendiff -f plain выводит разницу в текстовом формате.
+*https://asciinema.org/a/xh7ascRSQOoM28iu - все три формата работают: stylish (по умолчанию), plain, json.
 ---
 
 <details>
